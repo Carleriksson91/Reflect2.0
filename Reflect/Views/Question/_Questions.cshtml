@@ -1,0 +1,12 @@
+﻿@using Reflect.Azure.Entities
+@model List<Question>
+<div class="row">
+   <div class="col-md-12">
+      <ul class="list-group">
+         @foreach(var question in Model) {
+            <li class="list-group-item">@Html.Partial("_Question", question)</li>
+         }
+      </ul>
+
+   </div>
+</div>
