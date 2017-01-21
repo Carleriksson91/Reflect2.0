@@ -10,5 +10,9 @@ namespace Reflect.Azure.Entities
         public int QuestionAlternativeId { get; set; }
 
         public string Title { get; set; }
+
+        public int QuestionId { get; set; }
+
+        public virtual Question Question { get; set; }
     }
 }

@@ -172,6 +172,7 @@
     <Compile Include="Azure\Entities\QuestionAlternative.cs" />
     <Compile Include="Azure\Entities\Question.cs" />
     <Compile Include="Azure\Entities\Tag.cs" />
+    <Compile Include="Azure\Entities\User.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -186,6 +187,10 @@
     <Compile Include="Migrations\201701211048067_entities.cs" />
     <Compile Include="Migrations\201701211048067_entities.Designer.cs">
       <DependentUpon>201701211048067_entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211117054_fluentapi.cs" />
+    <Compile Include="Migrations\201701211117054_fluentapi.Designer.cs">
+      <DependentUpon>201701211117054_fluentapi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -268,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701211048067_entities.resx">
       <DependentUpon>201701211048067_entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211117054_fluentapi.resx">
+      <DependentUpon>201701211117054_fluentapi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
