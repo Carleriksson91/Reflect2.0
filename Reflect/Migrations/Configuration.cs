@@ -1,3 +1,5 @@
+using Reflect.Azure;
+
 namespace Reflect.Migrations
 {
     using System;
@@ -5,14 +7,14 @@ namespace Reflect.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Reflect.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AzureContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Reflect.Models.ApplicationDbContext context)
+        protected override void Seed(AzureContext context)
         {
             //  This method will be called after migrating to the latest version.
 

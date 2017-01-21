@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Reflect.Models;
 
 namespace Reflect.Azure
 {
-    //public class AzureContext : DbContext
-    //{
+    public class AzureContext : IdentityDbContext<ApplicationUser>
+    {
+        public AzureContext()
+            : base("azuredb", throwIfV1Schema: false) { }
 
-    //    public AzureContext()
-    //       : base("name=azuredb")
-    //    {
-    //    }
-    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //    {
-    //        //modelBuilder.Entity<Question>().HasMany<Tag>(x => x.Tags);
+        public static AzureContext Create()
+        {
+            return new AzureContext();
+        }
 
-    //    }
-
-
-    //    //public virtual DbSet<Question> Questions { get; set; }
-    //    //public virtual DbSet<Tag> Tags { get; set; }
-
-
-    //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
+        }
+    }
 }
