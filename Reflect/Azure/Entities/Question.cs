@@ -15,5 +15,10 @@ namespace Reflect.Azure.Entities
         public Guid? ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
         public DateTime CreatedDate { get; set; }
+
+
+        public ICollection<QuestionAlternative> QuestionAlternatives { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
     }
 }
